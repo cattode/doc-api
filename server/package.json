@@ -4,6 +4,7 @@
   "description": "The document API server",
   "main": "dist/app.js",
   "scripts": {
+    "start": "node dist/app.js",
     "test": "jest",
     "test-watch": "jest --watch"
   },
