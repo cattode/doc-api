@@ -1,0 +1,25 @@
+{
+  "name": "doc-api",
+  "version": "0.1.0",
+  "description": "A simple document-based API",
+  "main": "",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "keywords": [
+    "api",
+    "document"
+  ],
+  "author": "Damien Cattorini",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.19.0",
+    "typescript": "^3.6.2"
+  }
+}

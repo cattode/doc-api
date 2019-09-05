@@ -1,0 +1,20 @@
+{
+  "name": "doc-api-server",
+  "version": "0.1.0",
+  "description": "The document API server",
+  "main": "dist/app.js",
+  "scripts": {
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "author": "Damien Cattorini",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@types/hapi__hapi": "^18.2.5",
+    "@types/node": "^12.7.4"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^18.3.2"
+  }
+}
