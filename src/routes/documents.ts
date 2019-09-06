@@ -15,7 +15,7 @@ const routes: ServerRoute[] = [
                 query: {
                     offset: Joi.number().integer().min(0).default(0),
                     limit: Joi.number().integer().min(1).max(Config.DOCUMENT_LIMIT_MAX)
-                            .default(Config.DOCUMENT_LIMIT_DEFAUT),
+                            .default(Config.DOCUMENT_LIMIT_DEFAULT),
                     order: Joi.string().default(ORDERING.ASCENDING)
                 }
             }
@@ -58,7 +58,7 @@ const routes: ServerRoute[] = [
                 query: {
                     offset: Joi.number().integer().min(0).default(0),
                     limit: Joi.number().integer().min(1).max(Config.DOCUMENT_LIMIT_MAX)
-                            .default(Config.DOCUMENT_LIMIT_DEFAUT),
+                            .default(Config.DOCUMENT_LIMIT_DEFAULT),
                     order: Joi.string().default(ORDERING.ASCENDING)
                 }
             }
