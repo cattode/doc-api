@@ -25,6 +25,13 @@ Start the server
 npm start
 ```
 
+### Usage
+
+The configuration file is in doc-api/src/config.ts.
+By default, the API runs on `http://localhost:3000/`.
+
+An API usage guide can be found on the [Wiki](https://github.com/cattode/doc-api/wiki/API-Usage).
+
 
 ## Running the tests
 
