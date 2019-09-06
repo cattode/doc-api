@@ -5,6 +5,8 @@ A simple document-based API
 
 ### Installing
 
+Make sure Node.JS is installed
+
 Clone the repo
 
 ```
