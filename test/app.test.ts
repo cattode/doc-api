@@ -5,6 +5,8 @@ import Config from "../src/config";
 const randomDocumentIdentifier1: string = Math.random().toString(36).substring(2, 15);
 const randomDocumentIdentifier2: string = Math.random().toString(36).substring(2, 15);
 
+console.log = function() {};
+
 // Start application before running the test case
 beforeAll((done) => {
     server.events.on("start", () => {
