@@ -6,6 +6,7 @@ export default {
     VERSIONING_PATH: "versions",
     DIFF_PATH: "diff",
 
+    RATE_LIMIT: 500,
     DB_NAME: "db",
     DB_COLLECTION_NAME: "documents",
 
