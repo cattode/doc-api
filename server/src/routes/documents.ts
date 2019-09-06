@@ -1,33 +1,33 @@
 import {ServerRoute} from "@hapi/hapi";
 import Config from "../config";
-import {METHODS} from "./util";
+import {HTTP_METHODS, HTTP_STATUS} from "./util";
 
 const routes: ServerRoute[] = [
-    { method: METHODS.GET, path: "/" + Config.DOCUMENTS_PATH, handler: function (request, h) {
+    { method: HTTP_METHODS.GET, path: "/" + Config.DOCUMENTS_PATH, handler: function (request, h) {
         // TODO
-        return h.response().code(501);
+        return h.response().code(HTTP_STATUS.NOT_IMPLEMENTED);
     } },
 
-    { method: METHODS.POST, path: "/" + Config.DOCUMENTS_PATH, handler: function (request, h) {
+    { method: HTTP_METHODS.POST, path: "/" + Config.DOCUMENTS_PATH, handler: function (request, h) {
         // TODO
-        return h.response().code(501);
+        return h.response().code(HTTP_STATUS.NOT_IMPLEMENTED);
     } },
 
-    { method: METHODS.GET, path: "/" + Config.DOCUMENTS_PATH + "/{documentId}", handler: function (request, h) {
+    { method: HTTP_METHODS.GET, path: "/" + Config.DOCUMENTS_PATH + "/{documentId}", handler: function (request, h) {
         // TODO
-        return h.response().code(501);
-    } },
-
-    // tslint:disable-next-line:max-line-length
-    { method: METHODS.GET, path: "/" + Config.DOCUMENTS_PATH + "/{documentId}/" + Config.VERSIONING_PATH, handler: function (request, h) {
-        // TODO
-        return h.response().code(501);
+        return h.response().code(HTTP_STATUS.NOT_IMPLEMENTED);
     } },
 
     // tslint:disable-next-line:max-line-length
-    { method: METHODS.GET, path: "/" + Config.DOCUMENTS_PATH + "/{documentId}/"  + Config.VERSIONING_PATH + "/{versionId}", handler: function (request, h) {
+    { method: HTTP_METHODS.GET, path: "/" + Config.DOCUMENTS_PATH + "/{documentId}/" + Config.VERSIONING_PATH, handler: function (request, h) {
         // TODO
-        return h.response().code(501);
+        return h.response().code(HTTP_STATUS.NOT_IMPLEMENTED);
+    } },
+
+    // tslint:disable-next-line:max-line-length
+    { method: HTTP_METHODS.GET, path: "/" + Config.DOCUMENTS_PATH + "/{documentId}/"  + Config.VERSIONING_PATH + "/{versionId}", handler: function (request, h) {
+        // TODO
+        return h.response().code(HTTP_STATUS.NOT_IMPLEMENTED);
     } }
 ];
 

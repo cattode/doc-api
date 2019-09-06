@@ -1,12 +1,11 @@
 import {ServerRoute} from "@hapi/hapi";
 import documentRoutes from "./documents";
-
-export const METHODS = { GET: "GET", POST: "POST"};
+import {HTTP_METHODS, HTTP_STATUS} from "./util";
 
 const indexRoutes: ServerRoute[] = [
-    { method: METHODS.GET, path: "/", handler: function (request, h) {
+    { method: HTTP_METHODS.GET, path: "/", handler: function (request, h) {
         // TODO
-        return h.response().code(501);
+        return h.response().code(HTTP_STATUS.NOT_IMPLEMENTED);
     } }
 ];
 
