@@ -1,6 +1,7 @@
 import Boom from "@hapi/boom";
 import { Lifecycle } from "@hapi/hapi";
 import { diff } from "json-diff";
+import Config from "../config";
 import Database from "../Database";
 import DocumentVersion from "../models/DocumentVersion";
 import {getURL, ORDERING} from "../util";
@@ -38,6 +39,10 @@ export const getSome: Lifecycle.Method = (request, h) => {
             {
                 rel: "self",
                 href: request.url.toString()
+            },
+            {
+                rel: "document",
+                href: getURL(documentId)
             }
         ]
     };
@@ -72,7 +77,7 @@ export const getOne: Lifecycle.Method = (request, h) => {
         documentId: documentId,
         document: targetVersion.getContent(),
         version: versionId,
-        modificationDate: targetVersion.getModificationDate,
+        modificationDate: targetVersion.getModificationDate(),
         links: [
             {
                 rel: "self",
@@ -84,6 +89,15 @@ export const getOne: Lifecycle.Method = (request, h) => {
             }
         ]
     };
+
+    if (versionId > 1) {
+        response.links.push(
+            {
+                rel: "diff",
+                href: `${getURL(documentId, true, versionId)}/${Config.DIFF_PATH}`
+            }
+        );
+    }
 
     return h.response(response);
 };
@@ -121,6 +135,10 @@ export const getDiff: Lifecycle.Method = (request, h) => {
             {
                 rel: "self",
                 href: request.url.toString()
+            },
+            {
+                rel: "version",
+                href: getURL(documentId, true, versionId)
             },
             {
                 rel: "document",

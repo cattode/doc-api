@@ -64,6 +64,19 @@ export const add: Lifecycle.Method = (request, h) => {
 
     try {
         const newVersion: DocumentVersion = Database.instance.addDocument(documentId, modificationDate, content);
+        const response = {
+            links: [
+                {
+                    rel: "self",
+                    href: request.url.toString()
+                },
+                {
+                    rel: "document",
+                    href: getURL(documentId)
+                }
+            ]
+        };
+        return h.response(response);
         return h.response().code(201).location(getURL(documentId, true, newVersion.getVersionId()));
     } catch (e) {
         return h.response(Boom.internal());
