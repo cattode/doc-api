@@ -24,7 +24,7 @@ export function getURL(documentID?: string, includeVersions: boolean = false, ve
 
     url += `/${Config.VERSIONING_PATH}`;
 
-    if (versionID === null) {
+    if (versionID === undefined) {
         return url;
     }
 
