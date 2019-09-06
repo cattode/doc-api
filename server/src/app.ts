@@ -1,5 +1,6 @@
 import Hapi from "@hapi/hapi";
 import Config from "./config";
+import Database from "./Database";
 import routes from "./routes";
 
 export const server = new Hapi.Server({
@@ -9,6 +10,8 @@ export const server = new Hapi.Server({
         stripTrailingSlash: true,
     },
 });
+
+export const database: Database = new Database(Config.DB_NAME, Config.DB_COLLECTION_NAME);
 
 const init = async () => {
 

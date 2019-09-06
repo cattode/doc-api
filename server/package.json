@@ -13,9 +13,12 @@
   "private": true,
   "devDependencies": {
     "@types/hapi__hapi": "^18.2.5",
+    "@types/lokijs": "^1.5.2",
     "@types/node": "^12.7.4"
   },
   "dependencies": {
-    "@hapi/hapi": "^18.3.2"
+    "@hapi/hapi": "^18.3.2",
+    "json-diff": "^0.5.4",
+    "lokijs": "^1.5.7"
   }
 }
