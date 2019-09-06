@@ -5,7 +5,7 @@ export const ORDERING = { ASCENDING: "ascending", DESCENDING: "descending" };
 /**
  * Construct the URL of the API for a specific document and version
  * @param {DocumentId} documentId - The id of the document.
- * @param {includeVersions} boolean - Whether the resulting URL should include versions (default = false).
+ * @param {boolean} includeVersions - Whether the resulting URL should include versions (default = false).
  * @param {number} versionId - The id of the version.
  * @return {string} The constructed URL.
  */
