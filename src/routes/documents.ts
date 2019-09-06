@@ -49,7 +49,7 @@ const routes: ServerRoute[] = [
     },
 
     /**
-     * Get a document
+     * Retrieve a document
      *
      * @route {GET} /documents/{documentId}
      * @routeParam {string} documentId - the id of the document
