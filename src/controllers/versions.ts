@@ -57,9 +57,15 @@ export const getOne: Lifecycle.Method = (request, h) => {
 
     const targetVersion: DocumentVersion | null = Database.instance.getVersion(documentId, versionId);
     if (targetVersion === null) {
-        return h.response(Boom.notFound(
-            `No version #${versionId} could be found for the document ${documentId}.`
-            ).output.payload);
+        if (Database.instance.getDocument(documentId) !== null) {
+            return h.response(Boom.notFound(
+                `No document with the id ${documentId} could be found.`
+                ).output.payload);
+        } else {
+            return h.response(Boom.notFound(
+                `No version #${versionId} could be found for the document ${documentId}.`
+                ).output.payload);
+        }
     }
 
     const response = {
