@@ -11,7 +11,7 @@ export const getSome: Lifecycle.Method = (request, h) => {
         return h.response(Boom.badRequest("Invalid request params input"));
     }
 
-    const ascendingOrder: boolean = request.query.sort !== ORDERING.DESCENDING;
+    const ascendingOrder: boolean = request.query.order !== ORDERING.DESCENDING;
 
     const offset: number = Number.parseInt(request.query.offset as string, 10);
     if (isNaN(offset) || offset < 0) {
@@ -27,7 +27,12 @@ export const getSome: Lifecycle.Method = (request, h) => {
 
     const response = {
         documentId: documentId,
-        versions: versionsInfo.versions.map((version) => version.getDocumentId()),
+        versions: versionsInfo.versions.map((version) => {
+            return {
+                number: version.getVersionId(),
+                modificationDate: version.getModificationDate()
+            };
+        }),
         totalCount: versionsInfo.totalCount,
         links: [
             {

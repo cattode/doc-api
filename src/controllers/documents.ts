@@ -19,7 +19,7 @@ const payloadSchema = Joi.object({
 });
 
 export const getSome: Lifecycle.Method = (request, h) => {
-    const ascendingOrder: boolean = request.query.sort !== ORDERING.DESCENDING;
+    const ascendingOrder: boolean = request.query.order !== ORDERING.DESCENDING;
 
     const offset: number = Number.parseInt(request.query.offset as string, 10);
     if (isNaN(offset) || offset < 0) {
