@@ -18,7 +18,7 @@ const init = async () => {
     server.route(routes);
 
     await server.start();
-    console.log("Server running on %s", server.info.uri);
+    console.log("Server running on %s", server.info.uri + `/${Config.DOCUMENTS_PATH}`);
 };
 
 process.on("unhandledRejection", (reason, promise) => {

@@ -4,6 +4,7 @@
   "description": "A simple document-based API",
   "main": "",
   "scripts": {
+    "start": "tsc && node dist/app.js",
     "test": "jest",
     "test-watch": "jest --watch"
   },
@@ -14,12 +15,19 @@
   "author": "Damien Cattorini",
   "license": "UNLICENSED",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@hapi/hapi": "^18.3.2",
+    "json-diff": "^0.5.4",
+    "lokijs": "^1.5.7"
+  },
   "devDependencies": {
     "@types/jest": "^24.0.18",
     "jest": "^24.9.0",
     "ts-jest": "^24.0.2",
     "tslint": "^5.19.0",
-    "typescript": "^3.6.2"
+    "typescript": "^3.6.2",
+    "@types/hapi__hapi": "^18.2.5",
+    "@types/lokijs": "^1.5.2",
+    "@types/node": "^12.7.4"
   }
 }
