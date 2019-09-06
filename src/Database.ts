@@ -17,7 +17,7 @@ export default class Database {
     constructor(dbName: string, collectionName: string) {
         Database.instance = this;
         const db = new loki(dbName);
-        this.documentStore = db.addCollection<ISimpleVersion>(collectionName, { indices: ["documentId"] });
+        this.documentStore = db.addCollection<ISimpleVersion>(collectionName, { indices: ["documentId", "versionId"] });
     }
 
     /**
@@ -94,7 +94,7 @@ export default class Database {
         const resultSetDocuments = this.documentStore.chain().find({versionId: { $eq: 1}});
         const totalCount: number = resultSetDocuments.count();
         const targetDocuments = resultSetDocuments
-            .simplesort("versionId", { desc: !ascendingOrder})
+            .simplesort("versionId", !ascendingOrder)
             .offset(offset).limit(count).data();
 
         return {

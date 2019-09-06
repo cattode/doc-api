@@ -29,7 +29,7 @@ export const getSome: Lifecycle.Method = (request, h) => {
         documentId: documentId,
         versions: versionsInfo.versions.map((version) => {
             return {
-                number: version.getVersionId(),
+                versionId: version.getVersionId(),
                 modificationDate: version.getModificationDate()
             };
         }),
